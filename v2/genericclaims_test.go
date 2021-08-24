@@ -19,7 +19,7 @@ import (
 	"testing"
 	"time"
 
-	jwtv1 "github.com/nats-io/jwt"
+	jwtv1 "github.com/itsabgr/nats-jwt"
 )
 
 func TestNewGenericClaims(t *testing.T) {

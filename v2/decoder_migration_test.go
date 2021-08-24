@@ -20,7 +20,7 @@ import (
 	"testing"
 	"time"
 
-	v1jwt "github.com/nats-io/jwt"
+	v1jwt "github.com/itsabgr/nats-jwt"
 	"github.com/itsabgr/nats-nkeys"
 )
 

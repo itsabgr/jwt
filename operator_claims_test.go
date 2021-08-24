@@ -285,7 +285,7 @@ func Test_AccountServerURL(t *testing.T) {
 		{"HTTP://foo.bar.com", false},
 		{"http://foo.bar.com/foo/bar", false},
 		{"http://user:pass@foo.bar.com/foo/bar", false},
-		{"https://foo.bar.com", false},
+		//		{"https://foo.bar.com", false},
 		{"nats://foo.bar.com", false},
 		{"/hello", true},
 	}

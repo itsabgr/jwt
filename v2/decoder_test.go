@@ -23,7 +23,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/nats-io/nkeys"
+	"github.com/itsabgr/nats-nkeys"
 )
 
 func TestNewToken(t *testing.T) {

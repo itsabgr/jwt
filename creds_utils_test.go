@@ -21,7 +21,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nats-io/nkeys"
+	"github.com/itsabgr/nats-nkeys"
 )
 
 func makeJWT(t *testing.T) (string, nkeys.KeyPair) {
@@ -78,11 +78,11 @@ func validateSeed(t *testing.T, decorated []byte, nk nkeys.KeyPair) {
 	kind := ""
 	seed := seedKey(nk, t)
 	switch string(seed[0:2]) {
-	case "SO":
+	case "93":
 		kind = "operator"
-	case "SA":
+	case "90":
 		kind = "account"
-	case "SU":
+	case "95":
 		kind = "user"
 	default:
 		kind = "not supported"

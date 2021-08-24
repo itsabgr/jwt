@@ -20,7 +20,7 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/nats-io/nkeys"
+	"github.com/itsabgr/nats-nkeys"
 )
 
 // GenericClaims can be used to read a JWT as a map for any non-generic fields

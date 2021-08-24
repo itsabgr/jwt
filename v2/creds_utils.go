@@ -22,7 +22,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/nats-io/nkeys"
+	"github.com/itsabgr/nats-nkeys"
 )
 
 // DecorateJWT returns a decorated JWT that describes the kind of JWT
@@ -64,11 +64,11 @@ func DecorateSeed(seed []byte) ([]byte, error) {
 	pre := string(ts[0:2])
 	kind := ""
 	switch pre {
-	case "SU":
+	case "95":
 		kind = "USER"
-	case "SA":
+	case "90":
 		kind = "ACCOUNT"
-	case "SO":
+	case "93":
 		kind = "OPERATOR"
 	default:
 		return nil, errors.New("seed is not an operator, account or user seed")
@@ -132,7 +132,7 @@ func FormatUserConfig(jwtString string, seed []byte) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	if !bytes.HasPrefix(bytes.TrimSpace(seed), []byte("SU")) {
+	if !bytes.HasPrefix(bytes.TrimSpace(seed), []byte("95")) {
 		return nil, fmt.Errorf("nkey seed is not an user seed")
 	}
 
@@ -173,9 +173,9 @@ func ParseDecoratedNKey(contents []byte) (nkeys.KeyPair, error) {
 	} else {
 		lines := bytes.Split(contents, []byte("\n"))
 		for _, line := range lines {
-			if bytes.HasPrefix(bytes.TrimSpace(line), []byte("SO")) ||
-				bytes.HasPrefix(bytes.TrimSpace(line), []byte("SA")) ||
-				bytes.HasPrefix(bytes.TrimSpace(line), []byte("SU")) {
+			if bytes.HasPrefix(bytes.TrimSpace(line), []byte("93")) ||
+				bytes.HasPrefix(bytes.TrimSpace(line), []byte("90")) ||
+				bytes.HasPrefix(bytes.TrimSpace(line), []byte("95")) {
 				seed = line
 				break
 			}
@@ -184,9 +184,9 @@ func ParseDecoratedNKey(contents []byte) (nkeys.KeyPair, error) {
 	if seed == nil {
 		return nil, errors.New("no nkey seed found")
 	}
-	if !bytes.HasPrefix(seed, []byte("SO")) &&
-		!bytes.HasPrefix(seed, []byte("SA")) &&
-		!bytes.HasPrefix(seed, []byte("SU")) {
+	if !bytes.HasPrefix(seed, []byte("93")) &&
+		!bytes.HasPrefix(seed, []byte("90")) &&
+		!bytes.HasPrefix(seed, []byte("95")) {
 		return nil, errors.New("doesn't contain a seed nkey")
 	}
 	kp, err := nkeys.FromSeed(seed)
@@ -207,7 +207,7 @@ func ParseDecoratedUserNKey(contents []byte) (nkeys.KeyPair, error) {
 	if err != nil {
 		return nil, err
 	}
-	if !bytes.HasPrefix(seed, []byte("SU")) {
+	if !bytes.HasPrefix(seed, []byte("95")) {
 		return nil, errors.New("doesn't contain an user seed nkey")
 	}
 	kp, err := nkeys.FromSeed(seed)

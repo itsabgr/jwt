@@ -21,7 +21,7 @@ import (
 	"time"
 
 	v1jwt "github.com/nats-io/jwt"
-	"github.com/nats-io/nkeys"
+	"github.com/itsabgr/nats-nkeys"
 )
 
 func createExport(sub string) *v1jwt.Export {

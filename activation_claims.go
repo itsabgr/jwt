@@ -22,7 +22,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/nats-io/nkeys"
+	"github.com/itsabgr/nats-nkeys"
 )
 
 // Activation defines the custom parts of an activation claim

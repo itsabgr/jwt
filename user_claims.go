@@ -18,7 +18,7 @@ package jwt
 import (
 	"errors"
 
-	"github.com/nats-io/nkeys"
+	"github.com/itsabgr/nats-nkeys"
 )
 
 // User defines the user specific data in a user JWT

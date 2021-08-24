@@ -20,7 +20,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/nats-io/nkeys"
+	"github.com/itsabgr/nats-nkeys"
 )
 
 type Scope interface {

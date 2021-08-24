@@ -21,7 +21,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/nats-io/nkeys"
+	"github.com/itsabgr/nats-nkeys"
 )
 
 // Operator specific claims

@@ -22,7 +22,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nats-io/nkeys"
+	"github.com/itsabgr/nats-nkeys"
 )
 
 func Trace(message string) string {

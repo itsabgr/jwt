@@ -19,7 +19,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nats-io/nkeys"
+	"github.com/itsabgr/nats-nkeys"
 )
 
 func makeRole(t *testing.T, role string, pub []string, sub []string, bearer bool) (*UserScope, nkeys.KeyPair) {
